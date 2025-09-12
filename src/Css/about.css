@@ -1,0 +1,75 @@
+body {
+  color: #ededed;
+}
+
+.about {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 8%;
+  background: url("/Images/ABTDARK5.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.first-part {
+  position: relative;
+  margin-bottom: 300px;
+  cursor: pointer;
+}
+
+.first-part h1 {
+  position: relative;
+  font-size: 70px;
+  font-weight: 700;
+  line-height: 1;
+  width: 90px;
+  display: flex;
+}
+
+.first-part h5 {
+  font-size: 20px;
+}
+
+.first-part h6 {
+  font-size: 15px;
+  color: #9adaeb;
+  margin-left: 160px;
+  font-weight: 400;
+}
+
+.second-part {
+  margin-top: 270px;
+  margin-left: 150px;
+  cursor: pointer;
+}
+
+.second-part h1 {
+  color: #00abf0;
+  font-size: 65px;
+}
+
+.second-part p {
+  font-size: 18px;
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.fade-up.animate {
+  animation: fadeUp 1s ease-out forwards;
+  animation-delay: var(--delay, 0ms);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

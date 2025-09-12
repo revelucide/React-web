@@ -6,9 +6,3 @@
   box-sizing: border-box;
   font-family: "Poppins", Sans-serif;
 }
-
-body {
-  background: url("/public/Images/DARK3.png") no-repeat;
-  background-size: cover;
-  background-position: center;
-} 

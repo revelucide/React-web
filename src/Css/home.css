@@ -1,17 +1,20 @@
 body {
   color: #ededed;
+  min-height: 100vh;
 }
 
 .home {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
-  background: #081b29;
-  padding: 0 20%;
+  padding: 0 8%;
+  background: url("/public/Images/DARK3.png") no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .home-content {
-  max-width: 700px;
+  max-width: 500px;
 }
 
 .home-content h1 {
@@ -207,13 +210,13 @@ body {
 .home-imgHover {
   position: absolute;
   top: 0;
-  right: 40px;
+  right: 50px;
   width: 500px;
   height: 100%;
   background: transparent;
   transition: 2s;
   animation: maniActiveHover 0.1s forwards;
-  animation-delay: 4s;
+  animation-delay: 3s;
   pointer-events: none;
 }
 
