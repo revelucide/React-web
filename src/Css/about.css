@@ -7,7 +7,7 @@ body {
   display: flex;
   align-items: center;
   padding: 0 8%;
-  background: url("/Images/ABTDARK5.png") no-repeat;
+  background: url("/Images/ABTDARK6.png") no-repeat;
   background-size: cover;
   background-position: center;
 }
@@ -16,6 +16,7 @@ body {
   position: relative;
   margin-bottom: 300px;
   cursor: pointer;
+  transition: 0.3s ease-in;
 }
 
 .first-part h1 {
@@ -59,7 +60,7 @@ body {
 }
 
 .fade-up.animate {
-  animation: fadeUp 1s ease-out forwards;
+  animation: fadeUp 1.5s ease-out forwards;
   animation-delay: var(--delay, 0ms);
 }
 

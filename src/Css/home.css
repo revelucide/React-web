@@ -218,11 +218,12 @@ body {
   animation: maniActiveHover 0.1s forwards;
   animation-delay: 3s;
   pointer-events: none;
+  cursor: pointer;
 }
 
 .home-imgHover:hover {
   background: #081b29;
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
 .home-imgHover::after {

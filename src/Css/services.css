@@ -1,0 +1,144 @@
+:root {
+  /* Global colors */
+  --bg-main: #081b29;
+  --text-color: #ffffff;
+
+  /* Card colors */
+  --color-react: #00abf0;
+  --color-nextjs: #000000;
+  --color-laravel: #f05340;
+  --color-vue: #42b883;
+  --color-angular: #dd1b16;
+
+  /* Card sizing */
+  --card-size: 350px;
+  --card-radius: 25px;
+
+  /* Layout */
+  --stack-height: 300vh;
+  --left-margin: 100px;
+  --left-offset: 500px;
+
+  /* Transitions */
+  --transition-speed: 0.5s;
+}
+
+body {
+  width: 100%;
+  height: fit-content;
+  margin: 0;
+  padding: 0;
+  background: var(--bg-main);
+  color: var(--text-color);
+}
+
+.stack-area {
+  width: 100%;
+  height: var(--stack-height);
+  display: flex;
+  position: relative;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+/* LEFT SIDE */
+.left-container {
+  flex-basis: 50%;
+  height: 100vh;
+  padding-left: var(--left-margin);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+.left-container p {
+  margin-top: 20px;
+  width: 480px;
+}
+
+.deets {
+  font-size: 20px;
+  color: #081b29;
+  margin-top: 20px;
+  background-color: var(--color-react);
+  border-radius: 10px;
+  transition: var(--transition-speed) ease-in-out;
+  width: 180px;
+}
+
+.deets:hover {
+  background-color: #081b29;
+  color: #00abf0;
+  transform: scale(1.1);
+  border: #00abf0 2px solid;
+}
+
+/* RIGHT SIDE */
+.right-container {
+  flex-basis: 50%;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+/* CARD BASE */
+.card-elem {
+  width: var(--card-size);
+  height: var(--card-size);
+  border-radius: var(--card-radius);
+  margin-bottom: 10px;
+  position: absolute;
+  top: calc(50% - var(--card-size) / 2);
+  left: calc(50% - var(--card-size) / 2);
+  transition: var(--transition-speed) ease-in-out;
+  color: var(--text-color);
+  padding-top: 20px;
+}
+
+/* CARD COLORS */
+.card-elem.react {
+  background-color: var(--color-react);
+}
+
+.card-elem.nextjs {
+  background-color: var(--color-nextjs);
+}
+
+.card-elem.laravel {
+  background-color: var(--color-laravel);
+}
+
+.card-elem.vue {
+  background-color: var(--color-vue);
+}
+
+.card-elem.angular {
+  background-color: var(--color-angular);
+}
+
+/* CARD TEXT */
+.card-elem h2 {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 0;
+  margin-left: 35px;
+}
+
+.card-elem h1 {
+  padding: 12px 24px;
+  margin-top: 45px;
+  margin-left: 10px;
+}
+
+/* AWAY STATE */
+.card-elem.away {
+  transform: translateY(-120vh) rotate(-48deg) !important;
+  opacity: 0;
+}
