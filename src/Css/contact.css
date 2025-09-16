@@ -1,0 +1,248 @@
+html,
+body {
+  background: #081b29; /* match your site’s theme */
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #081b29;
+  z-index: -1; /* Place behind all content */
+  pointer-events: none;
+}
+
+.footer-wrapper {
+  position: relative;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(80px) scale(0.95);
+  transition: all 0.9s ease;
+  width: 100%;
+  margin-top: auto; /* push footer to bottom */
+  background: transparent;
+}
+
+.footer-wrapper.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+/* When out of view */
+.footer-wrapper.hide {
+  opacity: 0;
+  transform: translateY(80px) scale(0.95);
+}
+
+.footer-area {
+  background: linear-gradient(270deg, #082941, #0b3a58, #082941);
+  background-size: 600% 600%;
+  color: #ccc;
+  padding: 30px 60px 35px;
+  min-height: 100px;
+  transform: translateY(50px);
+  border-top: 2px solid rgba(17, 178, 242, 0.3);
+  z-index: 1;
+}
+
+@keyframes footerGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.footer-bg-text {
+  position: absolute;
+  top: -85px; /* pushes text upward so half escapes */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 220px;
+  font-weight: 900;
+  color: #3b9fcb;
+  z-index: 0;
+  pointer-events: none;
+  line-height: 1;
+  white-space: nowrap;
+  animation: glowPulse 10s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    text-shadow: 0 0 5px rgba(59, 159, 203, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 5px rgba(59, 159, 203, 0.8);
+  }
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 70px;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-col {
+  flex: 1;
+  margin: 0 20px;
+  min-width: 220px;
+  font-weight: 400;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-in-out;
+}
+
+.footer-wrapper.show .footer-col {
+  opacity: 1;
+  transform: translateY(0);
+}
+.footer-wrapper.show .footer-col:nth-child(1) {
+  transition-delay: 0.2s;
+}
+.footer-wrapper.show .footer-col:nth-child(2) {
+  transition-delay: 0.4s;
+}
+.footer-wrapper.show .footer-col:nth-child(3) {
+  transition-delay: 0.6s;
+}
+
+.footer-logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #00abf0;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.footer-desc {
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 20px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  position: relative;
+  text-decoration: none;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.footer-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: #00abf0;
+  transition: width 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.footer-links a:hover::after {
+  width: 100%;
+}
+
+.footer-col h3 {
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+.newsletter-form {
+  display: flex;
+  margin-top: 10px;
+}
+
+.newsletter-form input {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  flex: 1;
+  color: #fff;
+  background-color: rgb(28, 28, 30);
+}
+
+.newsletter-form input:hover {
+  box-shadow: 0 0 0 0.15vw rgba(135, 207, 235, 0.186);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.newsletter-form input:focus {
+  box-shadow: 0 0 0 0.1vw #00abf0;
+}
+
+.newsletter-form button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  background: #00abf0;
+  border: none;
+  color: black;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.newsletter-form button:hover {
+  transform: scale(1.1);
+  background: #081b29;
+  border: 1.5px solid #00abf0;
+  color: #00abf0;
+}
+
+.socials {
+  margin-top: 15px;
+}
+
+.socials a {
+  margin-right: 10px;
+  color: #ccc;
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.socials a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 14px;
+  color: #aaa;
+  font-weight: 500;
+}
+
+.footer-bottom span {
+  color: #00abf0;
+  font-weight: 700;
+}

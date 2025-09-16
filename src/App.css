@@ -6,3 +6,18 @@
   box-sizing: border-box;
   font-family: "Poppins", Sans-serif;
 }
+
+/* For Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* For Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* For IE, Edge (legacy) */
+html {
+  -ms-overflow-style: none;
+}

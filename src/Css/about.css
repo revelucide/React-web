@@ -20,16 +20,20 @@ body {
 }
 
 .first-part h1 {
-  position: relative;
   font-size: 70px;
   font-weight: 700;
-  line-height: 1;
-  width: 90px;
+  line-height: 1.1;
   display: flex;
+  color: #fff;
+  text-shadow: 0 0 20px rgba(14, 114, 153, 0.4);
 }
 
 .first-part h5 {
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #ededed;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease;
 }
 
 .first-part h6 {
@@ -37,6 +41,28 @@ body {
   color: #9adaeb;
   margin-left: 160px;
   font-weight: 400;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.first-part:hover h5 {
+  transform: translateX(8px);
+}
+
+.first-part:hover h6 {
+  opacity: 1;
+}
+
+@keyframes lineSlide {
+  0%,
+  100% {
+    transform: scaleX(0.6);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
 }
 
 .second-part {
@@ -48,6 +74,30 @@ body {
 .second-part h1 {
   color: #00abf0;
   font-size: 65px;
+  position: relative;
+}
+
+.second-part h1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 60px;
+  height: 3px;
+  background: #00abf0;
+  animation: linePulse 4s infinite;
+}
+
+@keyframes linePulse {
+  0%,
+  100% {
+    width: 60px;
+    opacity: 0.7;
+  }
+  50% {
+    width: 120px;
+    opacity: 1;
+  }
 }
 
 .second-part p {
