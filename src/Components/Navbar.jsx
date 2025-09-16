@@ -8,6 +8,12 @@ function Navbar() {
     }
   };
 
+  window.addEventListener("scroll", () => {
+    document
+      .querySelector(".header")
+      .classList.toggle("scrolled", window.scrollY > 50);
+  });
+
   return (
     <header className="header">
       <a onClick={() => handleScroll("home")} className="logo">

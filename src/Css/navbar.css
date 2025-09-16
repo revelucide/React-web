@@ -9,6 +9,14 @@
   justify-content: space-between;
   align-items: center;
   z-index: 100;
+  transition: 0.4s;
+}
+
+.header.scrolled {
+  background: rgba(8, 27, 41, 0.7);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  padding: 12px 8%;
 }
 
 .logo {
@@ -37,18 +45,30 @@
 }
 
 .navbar a {
+  position: relative;
   font-size: 19px;
   color: #ededed;
   text-decoration: none;
   font-weight: 500;
   margin-left: 35px;
-  transition: 0.3s;
+  transition: color 0.3s;
   cursor: pointer;
 }
 
-.navbar a:hover,
-.navbar a.active {
-  color: #00abf0;
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #00abf0;
+  transition: width 0.3s;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+  width: 100%;
 }
 
 @keyframes showRight {

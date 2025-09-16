@@ -57,26 +57,61 @@ body {
   left: 0;
 }
 
+.left-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -1px;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, #0b3a58, transparent);
+}
+
 .left-container p {
   margin-top: 20px;
   width: 480px;
+  line-height: 1.6;
+  font-size: 18px;
+  color: #ccc;
 }
 
 .deets {
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: 600;
   color: #081b29;
   margin-top: 20px;
-  background-color: var(--color-react);
-  border-radius: 10px;
-  transition: var(--transition-speed) ease-in-out;
-  width: 180px;
+  background: linear-gradient(90deg, #00abf0, #00f0a0);
+  border-radius: 12px;
+  padding: 12px 20px;
+  width: fit-content;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 12px rgba(0, 171, 240, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.deets::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: left 0.4s ease;
+}
+
+.deets:hover::after {
+  left: 100%;
 }
 
 .deets:hover {
-  background-color: #081b29;
+  background: #081b29;
   color: #00abf0;
-  transform: scale(1.1);
+  transform: translateY(-4px) scale(1.05);
   border: #00abf0 2px solid;
+  box-shadow: 0 6px 18px rgba(0, 171, 240, 0.35);
 }
 
 /* RIGHT SIDE */

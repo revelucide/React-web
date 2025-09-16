@@ -18,10 +18,12 @@ body {
 }
 
 .home-content h1 {
-  position: relative;
   font-size: 56px;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.2;
+  background: linear-gradient(80deg, #ffffff, #00abf0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .home-content h1::before {
@@ -189,6 +191,7 @@ body {
 
 .home-sci a:hover {
   color: #081b29;
+  transform: rotate(10deg) scale(1.1);
 }
 
 .home-sci a::before {
